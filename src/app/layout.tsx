@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
@@ -14,6 +14,12 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Bad Advice For Free",
@@ -32,7 +38,7 @@ export default function RootLayout({
       >
         <AuthProvider>
           <Navbar />
-          <main className="max-w-5xl mx-auto px-4 py-8">
+          <main className="max-w-5xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
             {children}
           </main>
         </AuthProvider>

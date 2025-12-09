@@ -62,12 +62,12 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold text-[#fafafa]">
+        <h1 className="text-2xl sm:text-4xl font-bold text-[#fafafa]">
           Bad Advice For Free
         </h1>
-        <p className="text-[#a3a3a3]">
+        <p className="text-sm sm:text-base text-[#a3a3a3] px-4">
           Ask questions. Get questionable answers. It&apos;s all free!
         </p>
       </div>
@@ -75,23 +75,23 @@ export default function Home() {
       <QuestionForm onSubmit={handleSubmitQuestion} />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-[#fafafa]">Recent Questions</h2>
+        <h2 className="text-lg sm:text-xl font-semibold text-[#fafafa]">Recent Questions</h2>
         
         {loading ? (
           <div className="space-y-4">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="p-5 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl animate-pulse">
+              <div key={i} className="p-4 sm:p-5 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl animate-pulse">
                 <div className="h-5 bg-[#2e2e2e] rounded w-3/4 mb-3" />
                 <div className="h-4 bg-[#2e2e2e] rounded w-1/2" />
               </div>
             ))}
           </div>
         ) : questions.length === 0 ? (
-          <div className="p-8 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl text-center">
+          <div className="p-6 sm:p-8 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl text-center">
             <p className="text-[#a3a3a3]">No questions yet. Be the first to ask!</p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {questions.map((question) => (
               <QuestionCard
                 key={question.id}

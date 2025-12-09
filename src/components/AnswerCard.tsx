@@ -80,9 +80,9 @@ export default function AnswerCard({
   };
 
   return (
-    <article className="p-5 bg-[#141414] border border-[#2e2e2e] rounded-xl">
-      <div className="flex items-start justify-between mb-3">
-        <div className="flex items-center gap-2 text-sm">
+    <article className="p-4 sm:p-5 bg-[#141414] border border-[#2e2e2e] rounded-xl">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+        <div className="flex flex-wrap items-center gap-2 text-sm">
           <div className="w-7 h-7 rounded-full bg-[#2e2e2e] flex items-center justify-center">
             <User size={14} className="text-[#a3a3a3]" />
           </div>

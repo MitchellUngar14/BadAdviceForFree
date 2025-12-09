@@ -42,8 +42,8 @@ export default function QuestionCard({
 
   return (
     <Link href={`/questions/${id}`}>
-      <article className="group p-5 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl hover:border-cyan-500/50 transition-all cursor-pointer">
-        <h2 className="text-lg font-semibold text-[#fafafa] group-hover:text-cyan-400 transition-colors mb-2">
+      <article className="group p-4 sm:p-5 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl hover:border-cyan-500/50 transition-all cursor-pointer">
+        <h2 className="text-base sm:text-lg font-semibold text-[#fafafa] group-hover:text-cyan-400 transition-colors mb-2 line-clamp-2">
           {title}
         </h2>
         
@@ -53,12 +53,12 @@ export default function QuestionCard({
           </p>
         )}
 
-        <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center gap-2 text-[#a3a3a3]">
-            <div className="w-6 h-6 rounded-full bg-[#2e2e2e] flex items-center justify-center">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm">
+          <div className="flex items-center gap-2 text-[#a3a3a3] flex-wrap">
+            <div className="w-6 h-6 rounded-full bg-[#2e2e2e] flex items-center justify-center flex-shrink-0">
               <User size={12} />
             </div>
-            <span>{user?.displayName || "Anonymous"}</span>
+            <span className="truncate max-w-[120px] sm:max-w-none">{user?.displayName || "Anonymous"}</span>
             {user && <TierIcon tier={user.tier} />}
             <span className="text-[#666]">·</span>
             <span className="text-[#666]">{formattedDate}</span>
@@ -66,7 +66,7 @@ export default function QuestionCard({
 
           <div className="flex items-center gap-1.5 text-[#a3a3a3]">
             <MessageCircle size={16} />
-            <span>{answerCount}</span>
+            <span>{answerCount} {answerCount === 1 ? 'answer' : 'answers'}</span>
           </div>
         </div>
       </article>

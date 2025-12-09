@@ -195,7 +195,7 @@ export default function QuestionPage() {
   });
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <Link
         href="/"
         className="inline-flex items-center gap-2 text-[#a3a3a3] hover:text-cyan-400 transition-colors"
@@ -204,14 +204,14 @@ export default function QuestionPage() {
         Back to questions
       </Link>
 
-      <article className="p-6 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl">
+      <article className="p-4 sm:p-6 bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl">
         {isEditing ? (
           <div className="space-y-4">
             <input
               type="text"
               value={editTitle}
               onChange={(e) => setEditTitle(e.target.value)}
-              className="w-full p-3 bg-[#0a0a0a] border border-[#2e2e2e] rounded-lg text-[#fafafa] text-xl font-semibold focus:outline-none focus:border-cyan-500"
+              className="w-full p-3 bg-[#0a0a0a] border border-[#2e2e2e] rounded-lg text-[#fafafa] text-lg sm:text-xl font-semibold focus:outline-none focus:border-cyan-500"
             />
             <textarea
               value={editBody}
@@ -236,8 +236,8 @@ export default function QuestionPage() {
           </div>
         ) : (
           <>
-            <div className="flex items-start justify-between mb-4">
-              <h1 className="text-2xl font-bold text-[#fafafa]">{question.title}</h1>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+              <h1 className="text-xl sm:text-2xl font-bold text-[#fafafa]">{question.title}</h1>
               {(canEdit || canDelete) && (
                 <div className="flex items-center gap-1">
                   {canEdit && (
@@ -278,12 +278,12 @@ export default function QuestionPage() {
       </article>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-[#fafafa]">
+        <h2 className="text-lg sm:text-xl font-semibold text-[#fafafa]">
           {question.answers.length} {question.answers.length === 1 ? "Answer" : "Answers"}
         </h2>
 
         {question.answers.length === 0 ? (
-          <div className="p-6 bg-[#141414] border border-[#2e2e2e] rounded-xl text-center">
+          <div className="p-4 sm:p-6 bg-[#141414] border border-[#2e2e2e] rounded-xl text-center">
             <p className="text-[#a3a3a3]">No answers yet. Be the first to share your wisdom!</p>
           </div>
         ) : (
